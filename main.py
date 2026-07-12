@@ -160,3 +160,6 @@ async def extract_invoice(payload: ExtractionRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+@app.get("/")
+async def home():
+    return {"status": "API is running successfully", "endpoints": ["/docs", "/extract"]}
