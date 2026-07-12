@@ -138,7 +138,7 @@ async def extract_invoice(payload: ExtractionRequest):
         )
 
         completion = client.beta.chat.completions.parse(
-            model="llama3", 
+            model="llama3.2:1b", 
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": payload.text}
